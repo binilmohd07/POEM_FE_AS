@@ -1,0 +1,26 @@
+mat-toolbar {
+    position: relative;
+    z-index: 5;
+}
+
+.content {
+    padding : 24px
+}
+
+mat-sidenav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0;   
+}
+
+mat-sidenav-container {
+    height : calc(100vh - 64px);
+    background-color: aliceblue;
+    --mat-list-active-indicator-shape : 0px;
+}
+
+mat-sidenav, mat-sidenav-content {
+    transition: all 500ms ease-in-out;
+}
+
+
+
