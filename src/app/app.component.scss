@@ -1,6 +1,11 @@
 mat-toolbar {
     position: relative;
     z-index: 5;
+
+    >button {
+        border: 0px;
+        background: transparent;
+    }
 }
 
 .content {

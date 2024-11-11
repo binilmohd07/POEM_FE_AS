@@ -3,6 +3,7 @@
 }
 
 .sidenav-header {
+    display: none;
     padding-top: 24px;
     text-align: center;
 
@@ -36,7 +37,23 @@
 
 .selected-menu-item {
     border-left: 5px solid;
-    border-left-color: blue;
+    border-left-color: var(--primary-color);
     border-radius: 0 !important;
-    color: blue;
+    color: var(--primary-color) !important;
+}
+
+.nav-title-active {
+    text-transform: uppercase;
+    font-size: 0.80rem;
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+.nav-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.nav-icon-active {
+    color: var(--primary-color) !important;
 }

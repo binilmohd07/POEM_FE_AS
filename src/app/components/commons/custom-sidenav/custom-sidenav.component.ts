@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, Input, input, signal } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink, RouterModule } from '@angular/router';
@@ -13,7 +14,7 @@ export type menuItem = {
 @Component({
   selector: 'app-custom-sidenav',
   standalone: true,
-  imports: [MatListModule, MatIconModule, CommonModule, RouterLink,RouterModule],
+  imports: [MatListModule, MatIconModule, CommonModule, RouterLink,RouterModule, MatDividerModule],
   templateUrl: './custom-sidenav.component.html',
   styleUrl: './custom-sidenav.component.scss'
 })
@@ -29,12 +30,12 @@ export class CustomSidenavComponent {
 
   menuItems = signal<menuItem[]>([
     {
-      icon : 'attach_money',
+      icon : 'price_change',
       label : 'Finances',
       route : 'finances'
     }, {
-      icon : 'list',
-      label : "To-Do's",
+      icon : 'list_alt',
+      label : 'Operations',
       route : 'operations'
     }, {
       icon : 'settings',

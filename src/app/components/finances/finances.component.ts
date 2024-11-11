@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatDividerModule } from '@angular/material/divider';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-finances',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,MatDividerModule],
   templateUrl: './finances.component.html',
   styleUrl: './finances.component.scss'
 })

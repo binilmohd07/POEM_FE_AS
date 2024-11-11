@@ -9,7 +9,7 @@ import { CustomSidenavComponent } from "./components/commons/custom-sidenav/cust
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterOutlet, MatToolbarModule, MatButton, MatIconModule, MatSidenavModule, CustomSidenavComponent],
+  imports: [RouterOutlet, MatToolbarModule, MatButton, MatIconModule, MatSidenavModule, CustomSidenavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

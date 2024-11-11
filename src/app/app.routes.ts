@@ -15,7 +15,7 @@ export const routes: Routes = [
     }, {
         path :'home', component: HomeComponent
     }, {
-        path : 'finances', component: FinancesComponent,
+        path : 'finances',
         children : [
             {
                 path : '', component : FinancesComponent
