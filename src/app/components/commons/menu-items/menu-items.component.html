@@ -1,0 +1,25 @@
+<a mat-list-item [routerLink]="item().route" routerLinkActive="selected-menu-item" #rla="routerLinkActive" [activated]="rla.isActive" (click)="toggleNested()">
+    <mat-icon [fontSet]="rla.isActive ? 'material-icons': 'material-icons-outlined' " matListItemIcon [ngClass]="{'nav-icon-active':rla.isActive}">{{item().icon}}</mat-icon>
+    <span matListItemTitle *ngIf="!collapsed()" [ngClass]="{'nav-title-active':rla.isActive, 'nav-title': !rla.isActive}">{{item().label}}</span>
+    @if (item().subItems) {
+        <span matListItemMeta>
+            @if (nestedMenuOpen()) {
+                <mat-icon>expand_less</mat-icon>
+            } @else {
+                <mat-icon>expand_more</mat-icon>
+            }
+            
+        </span>
+    }
+</a>
+
+@if (item().subItems && nestedMenuOpen()) { 
+    <div @expandContractMenu>
+        @for (subItem of item().subItems; track subItem.label ) {
+            <a mat-list-item [routerLink]="item().route+'/'+subItem.route" routerLinkActive #rla="routerLinkActive" [activated]="rla.isActive" [class.intended]="!collapsed()">
+                <mat-icon [fontSet]="rla.isActive ? 'material-icons': 'material-icons-outlined' " matListItemIcon [ngClass]="{'nav-icon-active':rla.isActive}">{{subItem.icon}}</mat-icon>
+                <span matListItemTitle *ngIf="!collapsed()" [ngClass]="{'nav-title-active':rla.isActive, 'nav-title': !rla.isActive}">{{subItem.label}}</span>
+            </a>
+        }
+    </div>
+}

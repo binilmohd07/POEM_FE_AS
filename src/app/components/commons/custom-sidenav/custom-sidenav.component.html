@@ -7,8 +7,8 @@
 </div>
 <mat-divider></mat-divider>
 <mat-nav-list>
-    <a mat-list-item *ngFor="let item of menuItems()" [routerLink]="item.route" routerLinkActive="selected-menu-item" #rla="routerLinkActive" [activated]="rla.isActive">
-        <mat-icon [fontSet]="rla.isActive ? 'material-icons': 'material-icons-outlined' " matListItemIcon [ngClass]="{'nav-icon-active':rla.isActive}">{{item.icon}}</mat-icon>
-        <span matListItemTitle *ngIf="!sideNavCollapsed()" [ngClass]="{'nav-title-active':rla.isActive, 'nav-title': !rla.isActive}">{{item.label}}</span>
-    </a>
+    @for (item of menuItems(); track item.label) {
+        <app-menu-items [item]="item" [collapsed]="sideNavCollapsed()"></app-menu-items>
+    }
+    
 </mat-nav-list>
