@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButton } from '@angular/material/button';
@@ -17,4 +17,10 @@ export class AppComponent {
   title = 'POEM_FE_AS';
   collapsed =  signal(false);
   sidenavWidth = computed(()=> this.collapsed() ? '65px' : '250px');
+
+  darkMode = signal(false);
+
+  setDarkMode = effect(()=>{
+    document.documentElement.classList.toggle('dark', this.darkMode())
+  })
 }

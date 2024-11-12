@@ -2,10 +2,10 @@ mat-toolbar {
     position: relative;
     z-index: 5;
 
-    >button {
-        border: 0px;
-        background: transparent;
-    }
+    // >button {
+    //     border: 0px;
+    //     background: transparent;
+    // }
 }
 
 .content {
@@ -19,7 +19,6 @@ mat-sidenav {
 
 mat-sidenav-container {
     height : calc(100vh - 64px);
-    background-color: aliceblue;
     --mat-list-active-indicator-shape : 0px;
 }
 

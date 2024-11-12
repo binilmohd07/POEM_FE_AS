@@ -2,7 +2,18 @@
     <button mat-icon-button (click)="collapsed.set(!collapsed())">
         <mat-icon>menu</mat-icon>
     </button>
-    <img src="/assets/bm_logo_black.png" alt="" width="60">
+    @if (darkMode()) {
+        <img src="/assets/bm_logo_white.png" alt="" width="60">        
+    } @else {
+        <img src="/assets/bm_logo_black.png" alt="" width="60">
+    }   
+    <button mat-icon-button (click)="darkMode.set(!darkMode())">
+        @if (darkMode()) {
+            <mat-icon>light_mode</mat-icon>
+        } @else {
+            <mat-icon>dark_mode</mat-icon>
+        }       
+    </button>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
