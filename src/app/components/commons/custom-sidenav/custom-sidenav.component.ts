@@ -37,15 +37,15 @@ export class CustomSidenavComponent {
       route : 'finances',
       subItems : [
         {
-          icon : 'list_alt',
+          icon : 'receipt_long',
           label : 'Expenses',
           route : 'expenses'
         }, {
-          icon : 'list_alt',
+          icon : 'trending_up',
           label : 'Investments',
           route : 'investments'
         }, {
-          icon : 'list_alt',
+          icon : 'calculate',
           label : 'Calculator',
           route : 'calculator'
         }

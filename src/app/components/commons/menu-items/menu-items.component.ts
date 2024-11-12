@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, computed, effect, input, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
@@ -35,4 +35,11 @@ export class MenuItemsComponent {
     }
     this.nestedMenuOpen.set(!this.nestedMenuOpen());
   }
+
+  routeHistory = input('');
+  level = computed(()=> this.routeHistory().split('/').length-1);
+  indentation = computed(() => this.collapsed() ? '16px' : `${(16 + (this.level() * 16))}px`)
+  
+  // logRoutes = effect(()=> console.log(this.routeHistory(), this.level()));
+  
 }
