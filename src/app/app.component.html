@@ -1,19 +1,19 @@
 <mat-toolbar class="mat-elevation-z5">
-    <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <span mat-icon-button (click)="collapsed.set(!collapsed())" style="padding-top: 8px; padding-right: 10px;">
         <mat-icon>menu</mat-icon>
-    </button>
+    </span>
     @if (darkMode()) {
         <img src="/assets/bm_logo_white.png" alt="" width="60">        
     } @else {
         <img src="/assets/bm_logo_black.png" alt="" width="60">
     }   
-    <button mat-icon-button (click)="darkMode.set(!darkMode())">
+    <span mat-icon-button (click)="darkMode.set(!darkMode())" class="ml-auto">
         @if (darkMode()) {
             <mat-icon>light_mode</mat-icon>
         } @else {
             <mat-icon>dark_mode</mat-icon>
         }       
-    </button>
+    </span>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
