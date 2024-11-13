@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+<mat-toolbar class="mat-elevation-z5">
+    <span mat-icon-button (click)="collapsed.set(!collapsed())" style="padding-top: 8px; padding-right: 10px;">
+        <mat-icon>menu</mat-icon>
+    </span>
+    @if (darkMode()) {
+        <img src="/assets/bm_logo_white.png" alt="" width="60">        
+    } @else {
+        <img src="/assets/bm_logo_black.png" alt="" width="60">
+    }   
+    <span mat-icon-button (click)="darkMode.set(!darkMode())" class="ml-auto">
+        @if (darkMode()) {
+            <mat-icon>light_mode</mat-icon>
+        } @else {
+            <mat-icon>dark_mode</mat-icon>
+        }       
+    </span>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+        <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

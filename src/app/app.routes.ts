@@ -5,6 +5,9 @@ import { BaseComponent } from './components/commons/base/base.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FinancesComponent } from './components/finances/finances.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { ExpensesComponent } from './components/finances/expenses/expenses.component';
+import { InvestmentsComponent } from './components/finances/investments/investments.component';
+import { CalculatorComponent } from './components/finances/calculator/calculator.component';
 
 export const routes: Routes = [
     {
@@ -13,7 +16,16 @@ export const routes: Routes = [
         path : 'home', component: BaseComponent,
         children : [
             {
-                path : 'finances', component: FinancesComponent
+                path : 'finances', component: FinancesComponent,
+                children : [
+                    {
+                        path : 'expenses', component: ExpensesComponent
+                    }, {
+                        path : 'investments', component: InvestmentsComponent
+                    }, {
+                        path : 'calculator', component: CalculatorComponent
+                    }
+                ]
             }, {
                 path : 'operations', component: OperationsComponent
             }, {
