@@ -1,5 +1,5 @@
 <mat-toolbar class="mat-elevation-z5">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button (click)="collapsed.set(!collapsed())">
         <mat-icon>menu</mat-icon>
     </button>
     @if (darkMode()) {
@@ -7,7 +7,7 @@
     } @else {
     <img src="/assets/bm_logo_black.png" alt="" width="60">
     }
-    <span class="example-spacer"></span>
+    <span class="toolbar-spacer"></span>
     <button mat-icon-button (click)="darkMode.set(!darkMode())">
         @if (darkMode()) {
         <mat-icon>light_mode</mat-icon>
@@ -20,4 +20,11 @@
     </button>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+        <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -6,6 +6,9 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { FinancesComponent } from './components/finances/finances.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { StylingComponent } from './components/commons/styling/styling.component';
+import { CalculatorComponent } from './components/finances/calculator/calculator.component';
+import { ExpensesComponent } from './components/finances/expenses/expenses.component';
+import { InvestmentsComponent } from './components/finances/investments/investments.component';
 
 export const routes: Routes = [
     {
@@ -14,7 +17,18 @@ export const routes: Routes = [
         path: 'home', component: BaseComponent,
         children: [
             {
-                path: 'finances', component: FinancesComponent
+                path: 'finances',
+                children: [
+                    {
+                        path: '', component: FinancesComponent
+                    }, {
+                        path: 'calculator', component: CalculatorComponent
+                    }, {
+                        path: 'expenses', component: ExpensesComponent
+                    }, {
+                        path: 'investments', component: InvestmentsComponent
+                    }
+                ]
             }, {
                 path: 'operations', component: OperationsComponent
             }, {
