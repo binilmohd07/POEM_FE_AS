@@ -1,1 +1,22 @@
-<p>login works!</p>
+<mat-card appearance="outlined" span="col-3">
+    <mat-card-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <br>
+        <button mat-fab extended [routerLink]="'/home'">
+            <mat-icon>favorite</mat-icon>
+            Basic
+        </button>
+    </mat-card-content>
+</mat-card>

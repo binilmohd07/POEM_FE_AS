@@ -5,24 +5,27 @@ import { BaseComponent } from './components/commons/base/base.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FinancesComponent } from './components/finances/finances.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { StylingComponent } from './components/commons/styling/styling.component';
 
 export const routes: Routes = [
     {
-        path : 'login', component: LoginComponent
+        path: 'login', component: LoginComponent
     }, {
-        path : 'home', component: BaseComponent,
-        children : [
+        path: 'home', component: BaseComponent,
+        children: [
             {
-                path : 'finances', component: FinancesComponent
+                path: 'finances', component: FinancesComponent
             }, {
-                path : 'operations', component: OperationsComponent
+                path: 'operations', component: OperationsComponent
             }, {
-                path : 'settings', component: SettingsComponent
+                path: 'settings', component: SettingsComponent
+            }, {
+                path: 'styling', component: StylingComponent
             }
         ]
     }, {
-        path:'', redirectTo:'/home', pathMatch:'full'
+        path: '', redirectTo: '/home', pathMatch: 'full'
     }, {
-        path : '**', pathMatch:'full', component:ErrorsComponent
+        path: '**', pathMatch: 'full', component: ErrorsComponent
     }
 ];

@@ -1,15 +1,23 @@
-<mat-toolbar>
+<mat-toolbar class="mat-elevation-z5">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+        <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+    @if (darkMode()) {
+    <img src="/assets/bm_logo_white.png" alt="" width="60">
+    } @else {
+    <img src="/assets/bm_logo_black.png" alt="" width="60">
+    }
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+    <button mat-icon-button (click)="darkMode.set(!darkMode())">
+        @if (darkMode()) {
+        <mat-icon>light_mode</mat-icon>
+        } @else {
+        <mat-icon>dark_mode</mat-icon>
+        }
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+    <button mat-icon-button [routerLink]="'/login'">
+        <mat-icon>logout</mat-icon>
     </button>
- </mat-toolbar>
-  
+</mat-toolbar>
+
 <router-outlet></router-outlet>
